@@ -6,6 +6,24 @@ from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 
+import drkconfig
+import time
+import network
+import drksql
+import mariadb
+import drklib
+
+# Konfiguration einlesen oder neu generieren
+###############################################################################
+config = drkconfig.set_std_config()
+if drkconfig.check_config(drklib.get_gu_id()):
+    config = drkconfig.get_config(drklib.get_gu_id())
+    drkconfig.write_config(drklib.get_gu_id(), config)
+else:
+    drkconfig.write_config(drklib.get_gu_id(), config)
+    gui_close()
+
+
 class SayHello(App):
     def build(self):
         self.icon = "favicon.ico"
