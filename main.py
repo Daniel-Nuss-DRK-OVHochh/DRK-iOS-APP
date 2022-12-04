@@ -32,7 +32,7 @@ class SayHello(App):
         self.window.size_hint = (0.6, 0.7)
         self.window.pos_hint = {"center_x":0.5, "center_y":0.5}
 
-        self.window.add_widget(Image(source="220608_Logo_Hochformat_DRK-Ortsvereinigung_HochheimamMain_4c.png"))
+        self.window.add_widget(Image(source=config['allgemein']['logo_fil']))
         self.greeting = Label(text="Dein Name bitte!")
         self.window.add_widget(self.greeting)
         self.user = TextInput(multiline = False)
