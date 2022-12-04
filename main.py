@@ -5,13 +5,15 @@ from kivy.uix.image import Image
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
+from kivy.core.window import Window
+
 
 import drkconfig
+import drklib
 import time
 import network
 import drksql
 import mariadb
-import drklib
 
 # Konfiguration einlesen oder neu generieren
 ###############################################################################
@@ -21,21 +23,18 @@ if drkconfig.check_config(drklib.get_gu_id()):
     drkconfig.write_config(drklib.get_gu_id(), config)
 else:
     drkconfig.write_config(drklib.get_gu_id(), config)
-    gui_close()
+    #gui_close()
 
 
-class SayHello(App):
+class Zeiterfassung(App):
     def build(self):
         self.icon = "favicon.ico"
+
         self.window = GridLayout()
         self.window.cols = 1
-        #self.window.canvas.before(Color=config['farben']['bg'])
-        #    Rectangle:
-        #        size: self.size
-        #        pos: self.pos
 
-        self.window.size_hint = (0.6, 0.7)
-        self.window.pos_hint = {"center_x":0.5, "center_y":0.5}
+#        self.window.size_hint = (1, 1)
+#        self.window.pos_hint = {"center_x":0.1, "center_y":0.1}
 
         self.window.add_widget(Image(source=config['allgemein']['logo_fil']))
         self.greeting = Label(text="Dein Name bitte!")
@@ -64,4 +63,4 @@ class SayHello(App):
 
 
 if __name__ == "__main__":
-    SayHello().run()
+    Zeiterfassung().run()
