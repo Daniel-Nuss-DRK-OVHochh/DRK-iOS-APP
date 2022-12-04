@@ -29,6 +29,11 @@ class SayHello(App):
         self.icon = "favicon.ico"
         self.window = GridLayout()
         self.window.cols = 1
+        #self.window.canvas.before(Color=config['farben']['bg'])
+        #    Rectangle:
+        #        size: self.size
+        #        pos: self.pos
+
         self.window.size_hint = (0.6, 0.7)
         self.window.pos_hint = {"center_x":0.5, "center_y":0.5}
 
