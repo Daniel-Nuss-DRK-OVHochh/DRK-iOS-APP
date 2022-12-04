@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/DRK-iOS-APP.iml" filepath="$PROJECT_DIR$/.idea/DRK-iOS-APP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ze_terminal/.idea/ze_terminal.iml" filepath="$PROJECT_DIR$/../ze_terminal/.idea/ze_terminal.iml" />
     </modules>
   </component>
 </project>
