@@ -37,20 +37,19 @@ class SayHello(App):
         self.window.add_widget(self.greeting)
         self.user = TextInput(multiline = False)
         self.window.add_widget(self.user)
-        self.button = Button(text = "Grüße")
-        self.button.bind(on_press = self.callback)
-        self.window.add_widget(self.button)
 
-        self.button1 = Button(text = "kommen")
-        self.button1.bind(on_press = self.callback)
-        self.button1.background_color = "green"
-        self.button2 = Button(text = "gehen")
-        self.button2.bind(on_press = self.callback)
-        self.button2.background_color = "red"
+        self.button_kommen = Button(text = config['texte']['ko'])
+        self.button_kommen.bind(on_press = self.callback)
+        self.button_kommen.background_color = config['farben']['ko']
+        self.button_kommen.background_normal = ""
+        self.button_gehen = Button(text = config['texte']['ge'])
+        self.button_gehen.bind(on_press = self.callback)
+        self.button_gehen.background_color = config['farben']['ge']
+        self.button_gehen.background_normal = ""
 
         boxlayout = BoxLayout()
-        boxlayout.add_widget(self.button1)
-        boxlayout.add_widget(self.button2)
+        boxlayout.add_widget(self.button_kommen)
+        boxlayout.add_widget(self.button_gehen)
         self.window.add_widget(boxlayout)
 
         return self.window
